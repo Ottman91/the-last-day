@@ -4,8 +4,11 @@
 <meta charset="UTF-8">
 <title>The Last Day</title>
 
-<!-- POLICE SALE / APOCALYPSE -->
+<!-- POLICE TITRE -->
 <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+
+<!-- POLICE APOCALYPSE -->
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
 
 <style>
 body {
@@ -47,37 +50,36 @@ header {
     padding: 80px 20px;
 }
 
-/* TITRE STYLE DAYZ */
+/* THE LAST DAY */
 .title {
     font-family: 'Special Elite', cursive;
-    font-size: 90px;
+    font-size: 80px;
     letter-spacing: 5px;
-
-    color: #eaeaea;
+    color: #f5f5f5;
 
     text-shadow:
         0 0 2px black,
-        0 0 5px rgba(255,255,255,0.2),
-        0 0 15px rgba(255,100,0,0.3);
-
-    position: relative;
+        0 0 10px rgba(255,100,0,0.4);
 }
 
-/* EFFET USÉ / SALE */
-.title::before {
-    content: "THE LAST DAY";
-    position: absolute;
-    left: 0;
-    top: 0;
-
-    color: rgba(255, 100, 0, 0.2);
-
-    transform: translate(2px, 2px);
-}
-
-/* TEXTE HEADER */
-header p {
+/* APOCALYPSE STYLE IMAGE */
+.apocalypse {
+    font-family: 'Rubik Glitch', sans-serif;
+    font-size: 70px;
     margin-top: 20px;
+
+    color: #888;
+
+    text-shadow:
+        0 0 5px #00ffff,
+        0 0 10px #00ffff,
+        0 0 20px #0099ff,
+        0 0 30px #0033ff;
+}
+
+/* TEXTE */
+header p {
+    margin-top: 30px;
     text-shadow: 0 0 5px black;
 }
 
@@ -111,6 +113,9 @@ header p {
 
 <header>
     <h1 class="title">THE LAST DAY</h1>
+
+    <!-- NOUVEAU TEXTE -->
+    <div class="apocalypse">APOCALYPSE</div>
 
     <p>
         Bienvenue survivant. Respecte les règles. Sois fort.<br>
