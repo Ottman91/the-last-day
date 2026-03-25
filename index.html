@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <title>The Last Day</title>
 
-<!-- POLICE APOCALYPSE -->
-<link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+<!-- POLICE APOCALYPSE STYLE DAYZ -->
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
 
 <style>
 body {
@@ -49,24 +49,34 @@ header {
 
 /* TITRE */
 .title {
-    font-family: 'Creepster', cursive;
-    font-size: 90px;
+    font-family: 'Rubik Glitch', sans-serif;
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
 }
 
-/* TEXTE AVEC LOGO INCRUSTÉ */
+/* TEXTE */
 .text {
-    background:
-        url("logo.png") center/contain no-repeat,
-        linear-gradient(white, #ff4d4d);
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    filter: contrast(1.2) brightness(1.1);
+    color: #f5f5f5;
 
     text-shadow:
         0 0 5px rgba(255,0,0,0.5),
-        0 0 15px rgba(255,0,0,0.3);
+        0 0 10px rgba(255,0,0,0.4),
+        0 0 20px black;
+}
+
+/* LOGO VISIBLE */
+.logo {
+    width: 120px;
+    height: auto;
+
+    filter:
+        brightness(1.2)
+        contrast(1.2)
+        drop-shadow(0 0 10px orange)
+        drop-shadow(0 0 20px red);
 }
 
 /* TEXTE HEADER */
@@ -106,6 +116,7 @@ header p {
 <header>
     <h1 class="title">
         <span class="text">THE LAST DAY</span>
+        <img src="logo.png" class="logo">
     </h1>
 
     <p>
