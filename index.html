@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>The Last Day</title>
 
-<!-- POLICE TITRE -->
 <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
 
 <style>
@@ -47,24 +46,24 @@ header {
     padding: 80px 20px;
 }
 
-/* THE LAST DAY */
+/* TITRE */
 .title {
     font-family: 'Special Elite', cursive;
     font-size: 80px;
     letter-spacing: 5px;
     color: #f5f5f5;
-    margin-bottom: 0; /* 🔥 enlève l'espace */
+    margin-bottom: 0;
 
     text-shadow:
         0 0 2px black,
         0 0 10px rgba(255,100,0,0.4);
 }
 
-/* APOCALYPSE (même style + collé) */
+/* APOCALYPSE */
 .apocalypse {
     font-family: 'Special Elite', cursive;
     font-size: 70px;
-    margin-top: -5px; /* 🔥 colle sous le titre */
+    margin-top: -5px;
 
     color: #f5f5f5;
 
@@ -73,10 +72,22 @@ header {
         0 0 10px rgba(255,100,0,0.4);
 }
 
-/* TEXTE */
-header p {
+/* TEXTE ANIMÉ */
+#intro-text {
     margin-top: 30px;
     text-shadow: 0 0 5px black;
+    min-height: 50px;
+}
+
+/* Effet flottant */
+@keyframes floatText {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-3px); }
+    100% { transform: translateY(0px); }
+}
+
+.float {
+    animation: floatText 3s ease-in-out infinite;
 }
 
 /* CONTENU */
@@ -109,13 +120,10 @@ header p {
 
 <header>
     <h1 class="title">THE LAST DAY</h1>
-
     <div class="apocalypse">APOCALYPSE</div>
 
-    <p>
-        Bienvenue survivant. Respecte les règles. Sois fort.<br>
-        Fais-toi des amis… ou des ennemis.
-    </p>
+    <!-- TEXTE QUI S'ÉCRIT -->
+    <p id="intro-text"></p>
 </header>
 
 <div id="home" class="container">
@@ -133,13 +141,10 @@ header p {
         <p>
         Tout a commencé par une simple rumeur… une maladie étrange. En quelques semaines, le monde a basculé.
         Les morts ne restaient plus morts. Ils se relevaient. Lents… affamés… violents.
-
         Les villes sont tombées les unes après les autres. Les gouvernements ont disparu.
         Les cris ont remplacé les sirènes.
-
         Aujourd’hui, il ne reste que des survivants. Certains cherchent à reconstruire.
         D’autres profitent du chaos.
-
         Les zombies ne sont plus la seule menace…
         </p>
     </div>
@@ -168,6 +173,7 @@ header p {
 </div>
 
 <script>
+// navigation
 function showPage(page) {
     document.getElementById("home").classList.add("hidden");
     document.getElementById("rules").classList.add("hidden");
@@ -176,6 +182,24 @@ function showPage(page) {
 
     document.getElementById(page).classList.remove("hidden");
 }
+
+// effet machine à écrire
+const text = "Bienvenue survivant. Respecte les règles. Sois fort.\nFais-toi des amis… ou des ennemis.";
+const speed = 40;
+let i = 0;
+
+function typeWriter() {
+    if (i < text.length) {
+        document.getElementById("intro-text").innerHTML += text.charAt(i) === "\n" ? "<br>" : text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+    } else {
+        document.getElementById("intro-text").classList.add("float");
+    }
+}
+
+// délai 5 secondes avant démarrage
+setTimeout(typeWriter, 5000);
 </script>
 
 </body>
