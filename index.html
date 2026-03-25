@@ -8,136 +8,105 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background: radial-gradient(circle at center, #1a0000, #000000);
     color: #e6c7a1;
     overflow-x: hidden;
 }
 
-/* FOND ANIMÉ APOCALYPSE */
+/* FUMÉE ANIMÉE */
 body::before {
     content: "";
     position: fixed;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, #220000, #000000);
-    animation: moveBackground 20s linear infinite;
-    z-index: -2;
-}
-
-body::after {
-    content: "";
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: url('https://i.imgur.com/8QfQFZp.png'); /* fumée */
-    opacity: 0.2;
-    animation: smoke 30s linear infinite;
+    width: 300%;
+    height: 300%;
+    background: repeating-radial-gradient(circle, rgba(255,50,0,0.05) 0px, transparent 100px);
+    animation: smokeMove 80s linear infinite;
     z-index: -1;
 }
 
-@keyframes moveBackground {
-    0% {transform: translate(0,0);}
-    50% {transform: translate(-25%, -25%);}
-    100% {transform: translate(0,0);}
-}
-
-@keyframes smoke {
-    from {background-position: 0 0;}
-    to {background-position: 1000px 0;}
-}
-
-/* NAVBAR */
-nav {
-    background: #111;
-    padding: 15px;
-    text-align: center;
-    border-bottom: 1px solid #333;
-}
-
-nav a {
-    color: #e6c7a1;
-    margin: 0 15px;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-nav a:hover {
-    color: orange;
+@keyframes smokeMove {
+    from { transform: translate(0,0); }
+    to { transform: translate(-800px,-800px); }
 }
 
 /* HEADER */
 header {
     text-align: center;
-    padding: 50px 20px;
+    padding: 60px 20px;
 }
 
-/* TITRE SANG */
+/* TITRE */
 header h1 {
-    font-size: 50px;
-    color: red;
-    text-shadow: 0 0 10px darkred;
+    font-size: 60px;
+    color: #ff1a1a;
+    text-shadow: 0 0 20px red, 0 0 40px darkred;
+    letter-spacing: 3px;
+}
+
+/* SANG QUI COULE */
+.blood {
     position: relative;
+    width: 220px;
+    height: 8px;
+    background: darkred;
+    margin: 15px auto;
+    border-radius: 5px;
 }
 
-header h1::after {
-    content: "||||||";
-    display: block;
-    color: darkred;
-    font-size: 20px;
-    letter-spacing: 5px;
-    margin-top: 5px;
-    animation: drip 1.5s infinite alternate;
+.blood::before,
+.blood::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    background: red;
+    border-radius: 50%;
 }
 
-@keyframes drip {
-    from {transform: translateY(0);}
-    to {transform: translateY(5px);}
+.blood::before {
+    left: 40%;
+    animation: drip1 2s infinite;
 }
 
-header p {
-    font-size: 18px;
+.blood::after {
+    left: 60%;
+    animation: drip2 2.5s infinite;
 }
 
-/* CONTENU */
-.container {
-    display: flex;
-    padding: 20px;
+@keyframes drip1 {
+    0% { height: 0; top: 0; opacity: 1; }
+    100% { height: 40px; top: 10px; opacity: 0; }
 }
 
-.sidebar {
-    width: 25%;
-    background: #111;
-    padding: 20px;
-    border-radius: 10px;
+@keyframes drip2 {
+    0% { height: 0; top: 0; opacity: 1; }
+    100% { height: 50px; top: 10px; opacity: 0; }
 }
 
-.sidebar p {
-    cursor: pointer;
+/* NAV */
+nav {
+    background: #0a0a0a;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #222;
 }
 
-.sidebar p:hover {
-    color: orange;
+nav a {
+    color: #e6c7a1;
+    margin: 0 20px;
+    text-decoration: none;
 }
 
-.content {
-    width: 75%;
-    padding: 20px;
+nav a:hover {
+    color: red;
 }
 
+/* CARDS */
 .card {
-    background: #111;
+    background: rgba(20,20,20,0.9);
     padding: 20px;
-    margin-bottom: 20px;
     border-radius: 10px;
-    border: 1px solid #333;
-}
-
-/* PAGES */
-.page {
-    display: none;
-}
-
-.active {
-    display: block;
+    border: 1px solid #222;
+    box-shadow: 0 0 10px rgba(255,0,0,0.1);
 }
 </style>
 
@@ -162,7 +131,11 @@ function showPage(pageId) {
 
 <header>
     <h1>THE LAST DAY</h1>
-    <p>Bienvenue survivant. Respecte les règles. Sois fort. Fais-toi des amis, ou ennemis...</p>
+    <div class="blood"></div>
+    <p>
+        Bienvenue survivant. Respecte les règles. Sois fort.<br>
+        Fais-toi des amis… ou des ennemis.
+    </p>
 </header>
 
 <!-- ACCUEIL -->
