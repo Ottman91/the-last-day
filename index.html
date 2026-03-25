@@ -75,17 +75,17 @@ header {
 /* TEXTE PRINCIPAL */
 #intro-text {
     margin-top: 30px;
-    font-size: 18px;
+    font-size: 22px; /* 🔥 plus gros */
     text-shadow: 0 0 5px black;
-    min-height: 50px;
+    min-height: 60px;
 }
 
 /* TEXTE SECONDAIRE */
 #sub-text {
     margin-top: 15px;
-    font-size: 15px;
+    font-size: 17px; /* 🔥 un peu plus petit */
     text-shadow: 0 0 5px black;
-    opacity: 0;
+    min-height: 50px;
 }
 
 /* Effet flottant */
@@ -193,30 +193,38 @@ function showPage(page) {
 }
 
 // texte principal
-const text = "Bienvenue survivant. Respecte les règles. Sois fort.\nFais-toi des amis… ou des ennemis.";
+const text1 = "Bienvenue survivant. Respecte les règles. Sois fort.\nFais-toi des amis… ou des ennemis.";
 
-// texte secondaire corrigé
-const subText = "The Last Day est un tout nouveau serveur FiveM post-apocalyptique avec de larges choix. Survivez, forgez des alliances avec d'autres survivants, découvrez ce monde dévasté et battez-vous pour votre survie.";
+// texte secondaire sur 2 lignes
+const text2 = "The Last Day est un tout nouveau serveur FiveM post-apocalyptique avec de larges choix.\nSurvivez, forgez des alliances avec d'autres survivants, découvrez ce monde dévasté et battez-vous pour votre survie.";
 
-const speed = 40;
 let i = 0;
+let j = 0;
+const speed = 35;
 
-function typeWriter() {
-    if (i < text.length) {
-        document.getElementById("intro-text").innerHTML += text.charAt(i) === "\n" ? "<br>" : text.charAt(i);
+function typeWriter1() {
+    if (i < text1.length) {
+        document.getElementById("intro-text").innerHTML += text1.charAt(i) === "\n" ? "<br>" : text1.charAt(i);
         i++;
-        setTimeout(typeWriter, speed);
+        setTimeout(typeWriter1, speed);
     } else {
         document.getElementById("intro-text").classList.add("float");
-
-        // apparition du texte secondaire
-        document.getElementById("sub-text").innerText = subText;
-        document.getElementById("sub-text").style.opacity = 1;
+        typeWriter2();
     }
 }
 
-// démarre direct
-typeWriter();
+function typeWriter2() {
+    if (j < text2.length) {
+        document.getElementById("sub-text").innerHTML += text2.charAt(j) === "\n" ? "<br>" : text2.charAt(j);
+        j++;
+        setTimeout(typeWriter2, speed);
+    } else {
+        document.getElementById("sub-text").classList.add("float");
+    }
+}
+
+// démarrage direct
+typeWriter1();
 </script>
 
 </body>
