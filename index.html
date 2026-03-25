@@ -347,7 +347,9 @@ window.showPage = function(page){
     document.getElementById("team").classList.add("hidden");
 
     document.getElementById(page).classList.remove("hidden");
-}
+
+    window.scrollTo({top: 0, behavior: "smooth"});
+};
 
 function go(id){
     document.getElementById(id).scrollIntoView({behavior:"smooth"});
