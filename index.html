@@ -72,14 +72,23 @@ header {
         0 0 10px rgba(255,100,0,0.4);
 }
 
-/* TEXTE ANIMÉ */
+/* TEXTE PRINCIPAL */
 #intro-text {
     margin-top: 30px;
+    font-size: 18px;
     text-shadow: 0 0 5px black;
     min-height: 50px;
 }
 
-/* Effet flottant (SANS flou) */
+/* TEXTE SECONDAIRE */
+#sub-text {
+    margin-top: 15px;
+    font-size: 15px;
+    text-shadow: 0 0 5px black;
+    opacity: 0;
+}
+
+/* Effet flottant */
 @keyframes floatText {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-3px); }
@@ -123,6 +132,7 @@ header {
     <div class="apocalypse">APOCALYPSE</div>
 
     <p id="intro-text"></p>
+    <p id="sub-text"></p>
 </header>
 
 <div id="home" class="container">
@@ -182,8 +192,12 @@ function showPage(page) {
     document.getElementById(page).classList.remove("hidden");
 }
 
-// machine à écrire (direct)
+// texte principal
 const text = "Bienvenue survivant. Respecte les règles. Sois fort.\nFais-toi des amis… ou des ennemis.";
+
+// texte secondaire corrigé
+const subText = "The Last Day est un tout nouveau serveur FiveM post-apocalyptique avec de larges choix. Survivez, forgez des alliances avec d'autres survivants, découvrez ce monde dévasté et battez-vous pour votre survie.";
+
 const speed = 40;
 let i = 0;
 
@@ -194,10 +208,14 @@ function typeWriter() {
         setTimeout(typeWriter, speed);
     } else {
         document.getElementById("intro-text").classList.add("float");
+
+        // apparition du texte secondaire
+        document.getElementById("sub-text").innerText = subText;
+        document.getElementById("sub-text").style.opacity = 1;
     }
 }
 
-// démarre DIRECT
+// démarre direct
 typeWriter();
 </script>
 
