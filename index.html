@@ -9,7 +9,7 @@
 <style>
 body {
     margin: 0;
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     background:
     linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
     url("fond.jpg.png");
@@ -55,13 +55,13 @@ header {
 
 /* TEXTE ANIMÉ */
 #intro-text {
-    margin-top: 20px;
-    font-size: 22px;
+    margin-top: 25px;
+    font-size: 24px;
 }
 
 #sub-text {
     margin-top: 10px;
-    font-size: 17px;
+    font-size: 18px;
 }
 
 @keyframes float {
@@ -77,6 +77,13 @@ header {
 /* PAGES */
 .container {
     padding: 30px;
+}
+
+.card {
+    background: rgba(0,0,0,0.75);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
 }
 
 .hidden {
@@ -102,12 +109,12 @@ header {
     cursor: pointer;
 }
 
-/* SIDEBAR */
+/* SOMMAIRE */
 .sidebar {
     width: 30%;
     position: sticky;
     top: 20px;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.85);
     padding: 20px;
     border-radius: 10px;
     border: 1px solid rgba(255,80,50,0.3);
@@ -148,13 +155,33 @@ html {
 
 <!-- ACCUEIL -->
 <div id="home" class="container">
-    <h2>Accueil</h2>
+
+    <div class="card">
+        <h2>Le refuge</h2>
+        <p>
+        Dernier bastion de l’humanité. Protégé par des murs improvisés et des survivants armés,
+        le refuge est un lieu de sécurité… mais aussi de tensions.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>L'histoire et le commencement</h2>
+        <p>
+        Tout a commencé par une simple rumeur… une maladie étrange. En quelques semaines, le monde a basculé.
+        Les morts ne restaient plus morts. Ils se relevaient. Lents… affamés… violents.
+        Les villes sont tombées les unes après les autres. Les gouvernements ont disparu.
+        Aujourd’hui, il ne reste que des survivants.
+        </p>
+    </div>
+
 </div>
 
 <!-- REGLEMENT -->
 <div id="rules" class="container hidden">
-    <h2>Règlement</h2>
-    <p>À venir...</p>
+    <div class="card">
+        <h2>Règlement</h2>
+        <p>Les règles seront ajoutées prochainement...</p>
+    </div>
 </div>
 
 <!-- LORE -->
@@ -165,47 +192,56 @@ html {
 <div class="content">
 
 <div class="section" id="s1">
-<h2 onclick="go('s1')">📅 2023 — Le début du projet</h2>
-<p>En 2023, le monde semblait encore parfaitement normal...</p>
+<h2 onclick="go('s1')">📅 2023 Le début du projet</h2>
+<p>En 2023, le monde semblait encore parfaitement normal. Les villes étaient pleines de vie, les réseaux fonctionnaient, et la population vivait sans se douter que tout allait bientôt disparaître. Pourtant, dans les profondeurs de certains laboratoires cachés, loin des regards du public, des expériences avaient déjà commencé. Ces recherches n’étaient pas financées par des gouvernements officiels, ni reconnues par des institutions connues. Elles étaient dirigées par une organisation secrète, une élite invisible opérant dans l’ombre depuis des années. Cette organisation portait un nom que très peu de personnes connaissaient : La Société. Leur objectif n’était pas de soigner, ni de protéger. Ils considéraient que l’humanité était devenue faible, instable, incapable de survivre aux crises futures. Pour eux, le monde devait être purgé… et reconstruit. C’est à ce moment précis qu’ils lancèrent leur projet le plus ambitieux : Le Projet Z-13. </p>
 </div>
 
 <div class="section" id="s2">
-<h2 onclick="go('s2')">🧬 2023 — Les premières expériences</h2>
-<p>Dans un complexe souterrain isolé...</p>
+<h2 onclick="go('s2')">🧬 2023 Les premières expériences</h2>
+<p>Dans un complexe souterrain isolé, protégé par des systèmes de sécurité extrêmes, les scientifiques de La Société commencèrent à développer un virus expérimental. Contrairement aux maladies classiques, ce virus n’était pas conçu pour tuer immédiatement. Il ciblait directement le cerveau humain, détruisant progressivement les fonctions liées à l’émotion, à la logique et à la morale. Les sujets testés perdaient leur humanité. Leur esprit disparaissait lentement, remplacé par des instincts primitifs : la faim, la violence, la survie. Mais ce qui inquiétait le plus les chercheurs, ce n’était pas la transformation mentale… c’était le corps. Les sujets infectés continuaient de fonctionner malgré des blessures graves. Ils ne ressentaient plus la douleur, ne montraient aucun signe de fatigue, et devenaient de plus en plus difficiles à contenir. Au lieu d’arrêter les expériences… La Société décida d’aller encore plus loin.</p>
 </div>
 
 <div class="section" id="s3">
-<h2 onclick="go('s3')">📅 2024 — L’instabilité du virus</h2>
-<p>En 2024, le virus commença à évoluer...</p>
+<h2 onclick="go('s3')">📅 2024 L’instabilité du virus</h2>
+<p>En 2024, le virus commença à évoluer de manière imprévisible. Certains sujets développaient des capacités physiques supérieures à la normale. D’autres semblaient réagir différemment, comme s’ils conservaient une forme d’adaptation ou d’intelligence altérée. Ces cas restaient rares, mais ils étaient suffisamment inquiétants pour alerter une partie des scientifiques. Mais La Société refusa de ralentir le projet. Pour eux, ces anomalies n’étaient pas des erreurs… Elles étaient des améliorations. Le virus n’était plus simplement un outil. Il devenait un moyen de sélectionner les individus capables de survivre dans un monde extrême. Une nouvelle vision naquit : Un monde où seuls les plus forts, les plus résistants, survivraient.</p>
 </div>
 
 <div class="section" id="s4">
-<h2 onclick="go('s4')">📅 2025 — L’incident</h2>
-<p>Le 12 janvier 2025 marqua le point de non-retour...</p>
+<h2 onclick="go('s4')">📅 12 janvier 2025 - L’incident</h2>
+<p>Le 12 janvier 2025 marqua le point de non-retour. Dans le laboratoire principal du projet Z-13, un incident majeur se produisit. Les rapports officiels parlent d’une erreur humaine, d’un protocole mal appliqué, d’un manque de vigilance. Mais certains témoignages évoquent un sabotage, un acte volontaire visant à libérer le virus. Un sujet infecté réussit à s’échapper. Désorienté, instable, mais toujours actif, il quitta le complexe et atteignit une zone habitée en moins de 24 heures. Ce fut la première fois que le virus entra en contact direct avec la population. En seulement deux jours, les premiers cas explosèrent. Et très vite, la situation devint incontrôlable.</p>
 </div>
 
 <div class="section" id="s5">
-<h2 onclick="go('s5')">📅 2025 — La propagation</h2>
-<p>Le virus se propagea...</p>
+<h2 onclick="go('s5')">📅 Février - Mars 2025 La propagation</h2>
+<p>Le virus se propagea à une vitesse fulgurante. Contrairement aux maladies classiques, il ne se contentait pas d’infecter : il transformait. Les personnes touchées perdaient toute humanité et devenaient agressives, imprévisibles, et extrêmement dangereuses. Les hôpitaux furent rapidement submergés. Les forces de l’ordre furent débordées. Les armées tentèrent d’intervenir… sans succès. Les grandes villes tombèrent les unes après les autres. Les routes furent abandonnées. Les communications cessèrent. Les gouvernements disparurent. En quelques semaines, le monde s’effondra.</p>
 </div>
 
 <div class="section" id="s6">
-<h2 onclick="go('s6')">⚔️ Les Commandos Blanco</h2>
-<p>Au milieu du chaos...</p>
+<h2 onclick="go('s6')">📅 Avril 2025 - Le monde après</h2>
+<p>Après la chute, un silence pesant s’installa. Un silence interrompu seulement par les cris, les tirs, et les bruits des infectés errant dans les rues. Les survivants se retrouvèrent livrés à eux-mêmes, sans aide, sans structure, sans espoir clair. Mais rapidement, une réalité s’imposa : Les infectés n’étaient plus la seule menace. Des groupes de survivants commencèrent à apparaître. Certains cherchaient à reconstruire, à s’entraider, à protéger. D’autres, au contraire, profitaient du chaos pour piller, dominer et imposer leur loi. La confiance devint une faiblesse.</p>
 </div>
 
 <div class="section" id="s7">
-<h2 onclick="go('s7')">🧪 La Société</h2>
-<p>La Société observe toujours...</p>
+<h2 onclick="go('s7')">📅 Mai 2025 - Les Commandos Blanco</h2>
+<p>Au milieu de ce chaos, un groupe refusa d’abandonner. Composé d’anciens militaires, de médecins, de civils formés à la survie, ce groupe se structura rapidement autour d’une mission claire : protéger les survivants et résister à l’effondrement du monde. Ils prirent un nom : ⚔️ Les Commandos Blanco Ce groupe se distingua par son organisation et ses valeurs. Contrairement aux autres, ils ne cherchaient pas le pouvoir. Ils cherchaient à préserver ce qu’il restait de l’humanité. Ils établirent des zones sécurisées, escortèrent des survivants, et commencèrent à lutter activement contre les infectés. Mais leur combat ne se limitait pas à la survie. Ils cherchaient la vérité. Et cette vérité menait directement à La Société.</p>
 </div>
 
 <div class="section" id="s8">
-<h2 onclick="go('s8')">📅 2026 — Aujourd’hui</h2>
-<p>Le monde est méconnaissable...</p>
+<h2 onclick="go('s8')">🧪 La Société - Toujours active</h2>
+<p>Car pendant que le monde s’effondrait… La Société continuait d’observer. Depuis des installations cachées, elle poursuivait ses recherches, capturait des survivants, étudiait les mutations du virus et testait de nouvelles variantes. Pour eux, l’apocalypse n’était pas un échec. C’était une expérience grandeur nature.</p>
+</div>
+    
+<div class="section" id="s9">
+<h2 onclick="go('s8')">📅 2026 - Aujourd’hui</h2>
+<p>Nous sommes maintenant en 2026. Le monde est méconnaissable. Les infectés évoluent. Les survivants s’organisent. Les conflits se multiplient. Les Commandos Blanco continuent de se battre, protégeant les faibles, affrontant les infectés, et cherchant un moyen de stopper le virus. La Société, elle, prépare quelque chose de plus grand. Quelque chose de plus dangereux.<p>
 </div>
 
+<div class="section" id="s10">
+<h2 onclick="go('s8')">🧍 TON HISTOIRE</h2>
+<p>Dans ce monde détruit… Tu n’es pas un simple survivant. Tu es une pièce du futur.<p>
 </div>
-
+    
+</div>
 <div class="sidebar">
 <h3>📖 Sommaire</h3>
 <a onclick="go('s1')">2023 — Début</a>
@@ -223,8 +259,10 @@ html {
 
 <!-- TEAM -->
 <div id="team" class="container hidden">
-    <h2>Équipe</h2>
-    <p>Bientôt...</p>
+    <div class="card">
+        <h2>Équipe</h2>
+        <p>Présentation de l'équipe bientôt disponible...</p>
+    </div>
 </div>
 
 <script>
@@ -237,35 +275,35 @@ function showPage(page){
     document.getElementById(page).classList.remove("hidden");
 }
 
+/* SCROLL */
 function go(id){
     document.getElementById(id).scrollIntoView({behavior:"smooth"});
 }
 
 /* TEXTE ANIMÉ */
 const text1 = "Bienvenue survivant. Respecte les règles. Sois fort. Fais-toi des amis… ou des ennemis.";
-const text2 = "The Last Day est un serveur FiveM post-apocalyptique. Survivez, créez des alliances et battez-vous pour votre survie.";
+const text2 = "The Last Day est un tout nouveau serveur FiveM post-apocalyptique. Survivez, forgez des alliances et battez-vous pour votre survie.";
 
-let i = 0;
-let j = 0;
+let i=0,j=0;
 
 function type1(){
-    if(i < text1.length){
-        intro-text.innerHTML += text1[i];
+    if(i<text1.length){
+        document.getElementById("intro-text").innerHTML += text1[i];
         i++;
         setTimeout(type1,30);
     } else {
-        intro-text.classList.add("float");
+        document.getElementById("intro-text").classList.add("float");
         type2();
     }
 }
 
 function type2(){
-    if(j < text2.length){
-        sub-text.innerHTML += text2[j];
+    if(j<text2.length){
+        document.getElementById("sub-text").innerHTML += text2[j];
         j++;
         setTimeout(type2,20);
     } else {
-        sub-text.classList.add("float");
+        document.getElementById("sub-text").classList.add("float");
     }
 }
 
