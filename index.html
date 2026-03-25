@@ -123,18 +123,18 @@ header{
 <body>
 
 <nav>
-<a onclick="showPage('home')">Accueil</a>
-<a onclick="showPage('lore')">Lore</a>
-<a onclick="showPage('rules')">Règlement</a>
-<a onclick="showPage('team')">Équipe</a>
+    <a onclick="showPage('home')">🏠 Accueil</a>
+    <a onclick="showPage('rules')">📜 Règlement</a>
+    <a onclick="showPage('lore')">📖 Lore</a>
+    <a onclick="showPage('team')">👥 Équipe</a>
 </nav>
 
 <header>
-<h1 class="title">THE LAST DAY</h1>
-<div class="apocalypse">APOCALYPSE</div>
+    <h1 class="title">THE LAST DAY</h1>
+    <div class="apocalypse">APOCALYPSE</div>
 
-<p id="intro-text"></p>
-<p id="sub-text"></p>
+    <p id="intro-text"></p>
+    <p id="sub-text"></p>
 </header>
 
 <!-- ACCUEIL -->
@@ -316,16 +316,16 @@ Tu es une pièce du futur.
 <div class="box">
 <h3>📖 SOMMAIRE</h3>
 
-<a onclick="go('s1')" id="link-s1">2023 Début</a>
-<a onclick="go('s2')" id="link-s2">Expériences</a>
-<a onclick="go('s3')" id="link-s3">2024</a>
-<a onclick="go('s4')" id="link-s4">Incident</a>
-<a onclick="go('s5')" id="link-s5">Propagation</a>
-<a onclick="go('s6')" id="link-s6">Monde</a>
-<a onclick="go('s7')" id="link-s7">Blanco</a>
-<a onclick="go('s8')" id="link-s8">Société</a>
-<a onclick="go('s9')" id="link-s9">2026</a>
-<a onclick="go('s10')" id="link-s10">Histoire</a>
+<a onclick="go('s1')" id="link-s1">📅 2023 — Début</a>
+<a onclick="go('s2')" id="link-s2">🧬 Expériences</a>
+<a onclick="go('s3')" id="link-s3">📅 2024</a>
+<a onclick="go('s4')" id="link-s4">⚠️ Incident</a>
+<a onclick="go('s5')" id="link-s5">☣️ Propagation</a>
+<a onclick="go('s6')" id="link-s6">🌍 Monde</a>
+<a onclick="go('s7')" id="link-s7">⚔️ Blanco</a>
+<a onclick="go('s8')" id="link-s8">🧪 Société</a>
+<a onclick="go('s9')" id="link-s9">📅 2026</a>
+<a onclick="go('s10')" id="link-s10">🧍 Histoire</a>
 
 </div>
 </div>
@@ -401,6 +401,35 @@ if(current){
 document.getElementById("link-"+current)?.classList.add("active");
 }
 });
+
+const text1 = "Bienvenue survivant. Respecte les règles. Sois fort. Fais-toi des amis… ou des ennemis.";
+const text2 = "The Last Day est un tout nouveau serveur FiveM post-apocalyptique avec de larges choix. Survivez, forgez des alliances avec d'autres survivants, découvrez ce monde dévasté et battez-vous pour votre survie.";
+
+let i = 0;
+let j = 0;
+
+function type1(){
+    if(i < text1.length){
+        document.getElementById("intro-text").innerHTML += text1[i];
+        i++;
+        setTimeout(type1,30);
+    } else {
+        document.getElementById("intro-text").classList.add("float");
+        type2();
+    }
+}
+
+function type2(){
+    if(j < text2.length){
+        document.getElementById("sub-text").innerHTML += text2[j];
+        j++;
+        setTimeout(type2,20);
+    } else {
+        document.getElementById("sub-text").classList.add("float");
+    }
+}
+
+type1();
 
 </script>
 
