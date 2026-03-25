@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Lore - The Last Day</title>
+<title>The Last Day</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
 
@@ -10,20 +10,22 @@
 body {
     margin: 0;
     font-family: Arial;
-    background: #0a0a0a;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url("fond.jpg.png");
+    background-size: cover;
+    background-attachment: fixed;
     color: #e6c7a1;
 }
 
-/* NAV */
 nav {
-    text-align: center;
-    padding: 15px;
     background: black;
+    padding: 15px;
+    text-align: center;
 }
 
 nav a {
     margin: 0 20px;
     color: #e6c7a1;
+    cursor: pointer;
     text-decoration: none;
 }
 
@@ -31,16 +33,31 @@ nav a:hover {
     color: #ff4d4d;
 }
 
-/* LAYOUT */
-.lore-container {
-    display: flex;
-    padding: 40px;
+header {
+    text-align: center;
+    padding: 60px;
 }
 
-/* TEXTE */
+.title {
+    font-family: 'Special Elite';
+    font-size: 70px;
+}
+
+.container {
+    padding: 30px;
+}
+
+.hidden {
+    display: none;
+}
+
+.lore-container {
+    display: flex;
+    gap: 40px;
+}
+
 .content {
     width: 70%;
-    padding-right: 40px;
 }
 
 .section {
@@ -52,32 +69,19 @@ nav a:hover {
     cursor: pointer;
 }
 
-.section p {
-    line-height: 1.6;
-}
-
-/* SOMMAIRE */
 .sidebar {
     width: 30%;
     position: sticky;
     top: 20px;
-    height: fit-content;
-
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.8);
     padding: 20px;
     border-radius: 10px;
     border: 1px solid rgba(255,80,50,0.3);
 }
 
-.sidebar h3 {
-    margin-bottom: 15px;
-}
-
 .sidebar a {
     display: block;
-    margin-bottom: 10px;
-    color: #e6c7a1;
-    text-decoration: none;
+    margin: 10px 0;
     cursor: pointer;
 }
 
@@ -85,7 +89,6 @@ nav a:hover {
     color: #ff4d4d;
 }
 
-/* SCROLL SMOOTH */
 html {
     scroll-behavior: smooth;
 }
@@ -95,96 +98,203 @@ html {
 <body>
 
 <nav>
-    <a href="#">Accueil</a>
-    <a href="#">Règlement</a>
-    <a href="#">Lore</a>
-    <a href="#">Équipe</a>
+    <a onclick="showPage('home')">Accueil</a>
+    <a onclick="showPage('lore')">Lore</a>
 </nav>
+
+<header>
+    <h1 class="title">THE LAST DAY</h1>
+</header>
+
+<div id="home" class="container">
+    <h2>Accueil</h2>
+    <p>Bienvenue survivant.</p>
+</div>
+
+<div id="lore" class="container hidden">
 
 <div class="lore-container">
 
-    <!-- TEXTE -->
-    <div class="content">
+<div class="content">
 
-        <div class="section" id="s1">
-            <h2 onclick="go('s1')">📅 2023 — Le début du projet</h2>
-            <p>
-            En 2023, le monde semblait encore parfaitement normal. Les villes étaient pleines de vie, les réseaux fonctionnaient, et la population vivait sans se douter que tout allait bientôt disparaître. Pourtant, dans les profondeurs de certains laboratoires cachés, loin des regards du public, des expériences avaient déjà commencé. Ces recherches n’étaient pas financées par des gouvernements officiels...
-            </p>
-        </div>
+<div class="section" id="s1">
+<h2 onclick="go('s1')">📅 2023 — Le début du projet</h2>
+<p>
+En 2023, le monde semblait encore parfaitement normal. Les villes étaient pleines de vie, les réseaux fonctionnaient, et la population vivait sans se douter que tout allait bientôt disparaître. Pourtant, dans les profondeurs de certains laboratoires cachés, loin des regards du public, des expériences avaient déjà commencé. Ces recherches n’étaient pas financées par des gouvernements officiels, ni reconnues par des institutions connues. Elles étaient dirigées par une organisation secrète, une élite invisible opérant dans l’ombre depuis des années.
 
-        <div class="section" id="s2">
-            <h2 onclick="go('s2')">🧬 2023 — Les premières expériences</h2>
-            <p>
-            Dans un complexe souterrain isolé, protégé par des systèmes de sécurité extrêmes, les scientifiques de La Société commencèrent à développer un virus expérimental. Contrairement aux maladies classiques...
-            </p>
-        </div>
+Cette organisation portait un nom que très peu de personnes connaissaient :
 
-        <div class="section" id="s3">
-            <h2 onclick="go('s3')">📅 2024 — L’instabilité du virus</h2>
-            <p>
-            En 2024, le virus commença à évoluer de manière imprévisible. Certains sujets développaient des capacités physiques supérieures...
-            </p>
-        </div>
+La Société.
 
-        <div class="section" id="s4">
-            <h2 onclick="go('s4')">📅 2025 — L’incident</h2>
-            <p>
-            Le 12 janvier 2025 marqua le point de non-retour. Un sujet infecté réussit à s’échapper...
-            </p>
-        </div>
+Leur objectif n’était pas de soigner, ni de protéger. Ils considéraient que l’humanité était devenue faible, instable, incapable de survivre aux crises futures. Pour eux, le monde devait être purgé… et reconstruit.
 
-        <div class="section" id="s5">
-            <h2 onclick="go('s5')">📅 2025 — La propagation</h2>
-            <p>
-            Le virus se propagea à une vitesse fulgurante. Les hôpitaux furent rapidement submergés...
-            </p>
-        </div>
+C’est à ce moment précis qu’ils lancèrent leur projet le plus ambitieux :
 
-        <div class="section" id="s6">
-            <h2 onclick="go('s6')">⚔️ Les Commandos Blanco</h2>
-            <p>
-            Au milieu de ce chaos, un groupe refusa d’abandonner. Ils se nommèrent les Commandos Blanco...
-            </p>
-        </div>
+Le Projet Z-13.
+</p>
+</div>
 
-        <div class="section" id="s7">
-            <h2 onclick="go('s7')">🧪 La Société</h2>
-            <p>
-            La Société n’a jamais disparu. Elle observe et expérimente toujours...
-            </p>
-        </div>
+<div class="section" id="s2">
+<h2 onclick="go('s2')">🧬 2023 — Les premières expériences</h2>
+<p>
+Dans un complexe souterrain isolé, protégé par des systèmes de sécurité extrêmes, les scientifiques de La Société commencèrent à développer un virus expérimental. Contrairement aux maladies classiques, ce virus n’était pas conçu pour tuer immédiatement. Il ciblait directement le cerveau humain, détruisant progressivement les fonctions liées à l’émotion, à la logique et à la morale.
 
-        <div class="section" id="s8">
-            <h2 onclick="go('s8')">📅 2026 — Aujourd’hui</h2>
-            <p>
-            Le monde est méconnaissable. Les infectés évoluent. Les survivants se battent...
-            </p>
-        </div>
+Les sujets testés perdaient leur humanité.
 
-    </div>
+Leur esprit disparaissait lentement, remplacé par des instincts primitifs : la faim, la violence, la survie. Mais ce qui inquiétait le plus les chercheurs, ce n’était pas la transformation mentale… c’était le corps. Les sujets infectés continuaient de fonctionner malgré des blessures graves. Ils ne ressentaient plus la douleur, ne montraient aucun signe de fatigue, et devenaient de plus en plus difficiles à contenir.
 
-    <!-- SOMMAIRE -->
-    <div class="sidebar">
-        <h3>📖 Sommaire</h3>
+Au lieu d’arrêter les expériences…
 
-        <a onclick="go('s1')">2023 — Début</a>
-        <a onclick="go('s2')">Expériences</a>
-        <a onclick="go('s3')">2024</a>
-        <a onclick="go('s4')">Incident</a>
-        <a onclick="go('s5')">Propagation</a>
-        <a onclick="go('s6')">Blanco</a>
-        <a onclick="go('s7')">Société</a>
-        <a onclick="go('s8')">2026</a>
-    </div>
+La Société décida d’aller encore plus loin.
+</p>
+</div>
+
+<div class="section" id="s3">
+<h2 onclick="go('s3')">📅 2024 — L’instabilité du virus</h2>
+<p>
+En 2024, le virus commença à évoluer de manière imprévisible. Certains sujets développaient des capacités physiques supérieures à la normale. D’autres semblaient réagir différemment, comme s’ils conservaient une forme d’adaptation ou d’intelligence altérée. Ces cas restaient rares, mais ils étaient suffisamment inquiétants pour alerter une partie des scientifiques.
+
+Mais La Société refusa de ralentir le projet.
+
+Pour eux, ces anomalies n’étaient pas des erreurs…
+Elles étaient des améliorations.
+
+Le virus n’était plus simplement un outil.
+Il devenait un moyen de sélectionner les individus capables de survivre dans un monde extrême.
+
+Une nouvelle vision naquit :
+
+Un monde où seuls les plus forts, les plus résistants, survivraient.
+</p>
+</div>
+
+<div class="section" id="s4">
+<h2 onclick="go('s4')">📅 12 janvier 2025 — L’incident</h2>
+<p>
+Le 12 janvier 2025 marqua le point de non-retour.
+
+Dans le laboratoire principal du projet Z-13, un incident majeur se produisit. Les rapports officiels parlent d’une erreur humaine, d’un protocole mal appliqué, d’un manque de vigilance. Mais certains témoignages évoquent un sabotage, un acte volontaire visant à libérer le virus.
+
+Un sujet infecté réussit à s’échapper.
+
+Désorienté, instable, mais toujours actif, il quitta le complexe et atteignit une zone habitée en moins de 24 heures. Ce fut la première fois que le virus entra en contact direct avec la population.
+
+En seulement deux jours, les premiers cas explosèrent.
+
+Et très vite, la situation devint incontrôlable.
+</p>
+</div>
+
+<div class="section" id="s5">
+<h2 onclick="go('s5')">📅 Février – Mars 2025 — La propagation</h2>
+<p>
+Le virus se propagea à une vitesse fulgurante. Contrairement aux maladies classiques, il ne se contentait pas d’infecter : il transformait. Les personnes touchées perdaient toute humanité et devenaient agressives, imprévisibles, et extrêmement dangereuses.
+
+Les hôpitaux furent rapidement submergés.
+Les forces de l’ordre furent débordées.
+Les armées tentèrent d’intervenir… sans succès.
+
+Les grandes villes tombèrent les unes après les autres.
+
+Les routes furent abandonnées.
+Les communications cessèrent.
+Les gouvernements disparurent.
+
+En quelques semaines, le monde s’effondra.
+</p>
+</div>
+
+<div class="section" id="s6">
+<h2 onclick="go('s6')">📅 Mai 2025 — Les Commandos Blanco</h2>
+<p>
+Au milieu de ce chaos, un groupe refusa d’abandonner.
+
+Composé d’anciens militaires, de médecins, de civils formés à la survie, ce groupe se structura rapidement autour d’une mission claire : protéger les survivants et résister à l’effondrement du monde.
+
+Ils prirent un nom :
+
+⚔️ Les Commandos Blanco
+
+Ce groupe se distingua par son organisation et ses valeurs. Contrairement aux autres, ils ne cherchaient pas le pouvoir. Ils cherchaient à préserver ce qu’il restait de l’humanité. Ils établirent des zones sécurisées, escortèrent des survivants, et commencèrent à lutter activement contre les infectés.
+
+Mais leur combat ne se limitait pas à la survie.
+
+Ils cherchaient la vérité.
+
+Et cette vérité menait directement à La Société.
+</p>
+</div>
+
+<div class="section" id="s7">
+<h2 onclick="go('s7')">🧪 La Société — Toujours active</h2>
+<p>
+Car pendant que le monde s’effondrait…
+
+La Société continuait d’observer.
+
+Depuis des installations cachées, elle poursuivait ses recherches, capturait des survivants, étudiait les mutations du virus et testait de nouvelles variantes. Pour eux, l’apocalypse n’était pas un échec.
+
+C’était une expérience grandeur nature.
+</p>
+</div>
+
+<div class="section" id="s8">
+<h2 onclick="go('s8')">📅 2026 — Aujourd’hui</h2>
+<p>
+Nous sommes maintenant en 2026.
+
+Le monde est méconnaissable.
+
+Les infectés évoluent.
+Les survivants s’organisent.
+Les conflits se multiplient.
+
+Les Commandos Blanco continuent de se battre, protégeant les faibles, affrontant les infectés, et cherchant un moyen de stopper le virus.
+
+La Société, elle, prépare quelque chose de plus grand.
+
+Quelque chose de plus dangereux.
+</p>
+</div>
+
+<div class="section" id="s9">
+<h2 onclick="go('s9')">🧍 TON HISTOIRE</h2>
+<p>
+Dans ce monde détruit…
+
+Tu n’es pas un simple survivant.
+
+Tu es une pièce du futur.
+</p>
+</div>
 
 </div>
 
+<div class="sidebar">
+<h3>📖 Sommaire</h3>
+<a onclick="go('s1')">2023 — Début</a>
+<a onclick="go('s2')">Expériences</a>
+<a onclick="go('s3')">2024</a>
+<a onclick="go('s4')">Incident</a>
+<a onclick="go('s5')">Propagation</a>
+<a onclick="go('s6')">Blanco</a>
+<a onclick="go('s7')">Société</a>
+<a onclick="go('s8')">2026</a>
+<a onclick="go('s9')">Ton histoire</a>
+</div>
+
+</div>
+</div>
+
 <script>
+function showPage(page){
+    document.getElementById("home").classList.add("hidden");
+    document.getElementById("lore").classList.add("hidden");
+    document.getElementById(page).classList.remove("hidden");
+}
+
 function go(id){
-    document.getElementById(id).scrollIntoView({
-        behavior: "smooth"
-    });
+    document.getElementById(id).scrollIntoView({behavior:"smooth"});
 }
 </script>
 
