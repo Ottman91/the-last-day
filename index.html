@@ -4,37 +4,23 @@
 <meta charset="UTF-8">
 <title>The Last Day</title>
 
+<!-- POLICE APOCALYPSE -->
+<link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+
 <style>
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-background:
-linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
-url("fond.jpg.png");
-background-size: cover;
-background-position: center;
-background-attachment: fixed;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
+    url("fond.jpg.png");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
     color: #e6c7a1;
-    overflow-x: hidden;
-    h2, p {
-    text-shadow: 0 0 5px black;
-}
-
-/* POUSSIÈRE */
-body::before {
-    content: "";
-    position: fixed;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size: 80px 80px;
-    animation: dust 120s linear infinite;
-    z-index: 0;
-}
-
-@keyframes dust {
-    from { transform: translate(0,0); }
-    to { transform: translate(-500px,-500px); }
 }
 
 /* NAV */
@@ -42,8 +28,6 @@ nav {
     background: #0a0a0a;
     padding: 15px;
     text-align: center;
-    position: relative;
-    z-index: 2;
 }
 
 nav a {
@@ -61,19 +45,12 @@ nav a:hover {
 header {
     text-align: center;
     padding: 60px;
-    position: relative;
-    z-index: 2;
 }
 
-<h1 class="title">
-    THE LAST DAY
-    <img src="fond.png" class="logo">
-</h1>
-<link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
-
+/* TITRE APOCALYPSE */
 .title {
-    font-family: 'Nosifer', cursive;
-    font-size: 60px;
+    font-family: 'Creepster', cursive;
+    font-size: 70px;
 
     background: linear-gradient(white, red);
     -webkit-background-clip: text;
@@ -87,33 +64,33 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
 }
 
+/* LOGO */
 .logo {
-    width: 80px;
+    width: 100px;
 }
 
-@keyframes drip {
-    0% { height: 0; opacity: 1; }
-    100% { height: 40px; opacity: 0; }
+/* TEXTE */
+header p {
+    margin-top: 20px;
+    text-shadow: 0 0 5px black;
 }
 
 /* CONTENU */
 .container {
     padding: 20px;
-    position: relative;
-    z-index: 2;
 }
 
 .card {
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.7);
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.05);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(6px);
 }
+
 .hidden {
     display: none;
 }
@@ -130,11 +107,9 @@ header {
 </nav>
 
 <header>
-    <h1>
-        THE LAST 
-        <span class="drip">D</span>
-        <span class="drip">A</span>
-        <span class="drip">Y</span>
+    <h1 class="title">
+        THE LAST DAY
+        <img src="logo.png" class="logo">
     </h1>
 
     <p>
@@ -145,6 +120,7 @@ header {
 
 <!-- ACCUEIL -->
 <div id="home" class="container">
+
     <div class="card">
         <h2>Le refuge</h2>
         <p>
@@ -168,6 +144,7 @@ header {
         Les zombies ne sont plus la seule menace…
         </p>
     </div>
+
 </div>
 
 <!-- REGLEMENT -->
