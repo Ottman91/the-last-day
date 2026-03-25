@@ -68,6 +68,26 @@ header{
     100%{transform:translateY(0)}
 }
 
+<!-- ACCUEIL -->
+<div id="home">
+    <h2>Accueil</h2>
+</div>
+
+<!-- RULES -->
+<div id="rules" class="hidden">
+    <h2>Règlement</h2>
+</div>
+
+<!-- LORE -->
+<div id="lore" class="hidden">
+    <!-- TON LORE ICI -->
+</div>
+
+<!-- TEAM -->
+<div id="team" class="hidden">
+    <h2>Équipe</h2>
+</div>
+    
 /* PAGE */
 .hidden{
     display:none;
@@ -128,7 +148,7 @@ header{
     <a onclick="showPage('lore')">📖 Lore</a>
     <a onclick="showPage('team')">👥 Équipe</a>
 </nav>
-
+    
 <header>
     <h1 class="title">THE LAST DAY</h1>
     <div class="apocalypse">APOCALYPSE</div>
@@ -136,7 +156,7 @@ header{
     <p id="intro-text"></p>
     <p id="sub-text"></p>
 </header>
-
+    
 <!-- ACCUEIL -->
 <div id="home">
 <h2>Accueil</h2>
@@ -345,91 +365,84 @@ Tu es une pièce du futur.
 
 <script>
 
-/* NAV */
-window.showPage=function(page){
-["home","lore","rules","team"].forEach(p=>{
-document.getElementById(p).style.display="none";
-});
-document.getElementById(page).style.display="block";
-window.scrollTo(0,0);
-}
+/* NAVIGATION FIX */
+window.showPage = function(page){
+    const pages = ["home","rules","lore","team"];
 
-/* SCROLL */
+    pages.forEach(p=>{
+        const el = document.getElementById(p);
+        if(el) el.style.display = "none";
+    });
+
+    const active = document.getElementById(page);
+    if(active) active.style.display = "block";
+
+    window.scrollTo(0,0);
+};
+
+/* SCROLL LORE */
 function go(id){
-document.getElementById(id).scrollIntoView({behavior:"smooth"});
+    document.getElementById(id).scrollIntoView({behavior:"smooth"});
 }
 
-/* TEXTE ANIME */
-const t1="Bienvenue survivant. Respecte les règles. Sois fort.";
-const t2="Fais-toi des amis… ou des ennemis.";
+/* TEXTE ANIMÉ */
+const text1 = "Bienvenue survivant. Respecte les règles. Sois fort. Fais-toi des amis… ou des ennemis.";
+const text2 = "The Last Day est un tout nouveau serveur FiveM post-apocalyptique avec de larges choix. Survivez, forgez des alliances avec d'autres survivants, découvrez ce monde dévasté et battez-vous pour votre survie.";
 
 let i=0,j=0;
 
 function type1(){
-if(i<t1.length){
-document.getElementById("intro-text").innerHTML+=t1[i++];
-setTimeout(type1,30);
-}else{
-document.getElementById("intro-text").classList.add("float");
-type2();
-}
-}
+    const el = document.getElementById("intro-text");
+    if(!el) return;
 
-function type2(){
-if(j<t2.length){
-document.getElementById("sub-text").innerHTML+=t2[j++];
-setTimeout(type2,30);
-}else{
-document.getElementById("sub-text").classList.add("float");
-}
-}
-
-type1();
-
-/* SOMMAIRE ACTIF */
-const sections=document.querySelectorAll(".section");
-
-window.addEventListener("scroll",()=>{
-let current="";
-sections.forEach(sec=>{
-if(scrollY>=sec.offsetTop-150){
-current=sec.id;
-}
-});
-document.querySelectorAll(".sidebar a").forEach(a=>a.classList.remove("active"));
-if(current){
-document.getElementById("link-"+current)?.classList.add("active");
-}
-});
-
-const text1 = "Bienvenue survivant. Respecte les règles. Sois fort. Fais-toi des amis… ou des ennemis.";
-const text2 = "The Last Day est un tout nouveau serveur FiveM post-apocalyptique avec de larges choix. Survivez, forgez des alliances avec d'autres survivants, découvrez ce monde dévasté et battez-vous pour votre survie.";
-
-let i = 0;
-let j = 0;
-
-function type1(){
-    if(i < text1.length){
-        document.getElementById("intro-text").innerHTML += text1[i];
+    if(i<text1.length){
+        el.innerHTML += text1[i];
         i++;
         setTimeout(type1,30);
     } else {
-        document.getElementById("intro-text").classList.add("float");
+        el.classList.add("float");
         type2();
     }
 }
 
 function type2(){
-    if(j < text2.length){
-        document.getElementById("sub-text").innerHTML += text2[j];
+    const el = document.getElementById("sub-text");
+    if(!el) return;
+
+    if(j<text2.length){
+        el.innerHTML += text2[j];
         j++;
         setTimeout(type2,20);
     } else {
-        document.getElementById("sub-text").classList.add("float");
+        el.classList.add("float");
     }
 }
 
 type1();
+
+/* SOMMAIRE ACTIF */
+setTimeout(()=>{
+    const sections=document.querySelectorAll(".section");
+
+    window.addEventListener("scroll",()=>{
+        let current="";
+
+        sections.forEach(sec=>{
+            if(window.scrollY>=sec.offsetTop-150){
+                current=sec.id;
+            }
+        });
+
+        document.querySelectorAll(".sidebar a").forEach(a=>{
+            a.classList.remove("active");
+        });
+
+        if(current){
+            const link=document.getElementById("link-"+current);
+            if(link) link.classList.add("active");
+        }
+    });
+},500);
 
 </script>
 
