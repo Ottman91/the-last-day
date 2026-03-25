@@ -9,13 +9,15 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
 background:
-linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
-url("https://images.unsplash.com/photo-1512453979798-5ea266f8880c");
+linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.95)),
+url("https://images.unsplash.com/photo-1494526585095-c41746248156");
 background-size: cover;
 background-position: center;
 background-attachment: fixed;
     color: #e6c7a1;
     overflow-x: hidden;
+    h2, p {
+    text-shadow: 0 0 5px black;
 }
 
 /* POUSSIÈRE */
@@ -66,7 +68,10 @@ header {
 h1 {
     font-size: 60px;
     color: red;
-    text-shadow: 0 0 20px red, 0 0 40px darkred;
+    text-shadow: 
+        0 0 10px red,
+        0 0 20px darkred,
+        0 0 40px black;
 }
 
 /* SANG QUI COULE */
@@ -99,8 +104,12 @@ h1 {
 }
 
 .card {
-    background: rgba(0,0,0,0.85);
-    backdrop-filter: blur(6px);
+    background: rgba(0,0,0,0.6);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.05);
+    backdrop-filter: blur(8px);
 }
 .hidden {
     display: none;
@@ -195,6 +204,3 @@ function showPage(page) {
 
 </body>
 </html>
-h2, p {
-    text-shadow: 0 0 5px black;
-}
