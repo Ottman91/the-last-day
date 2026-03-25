@@ -337,31 +337,77 @@ function type2(){
     }
 }
 
-type1();
 <script>
-const sections = document.querySelectorAll(".section");
+window.onload = function(){
 
-window.addEventListener("scroll", () => {
-    let current = "";
+    function showPage(page){
+        document.getElementById("home").classList.add("hidden");
+        document.getElementById("rules").classList.add("hidden");
+        document.getElementById("lore").classList.add("hidden");
+        document.getElementById("team").classList.add("hidden");
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 150;
-        if (scrollY >= sectionTop) {
-            current = section.getAttribute("id");
+        document.getElementById(page).classList.remove("hidden");
+    }
+
+    window.showPage = showPage;
+
+    window.go = function(id){
+        document.getElementById(id).scrollIntoView({behavior:"smooth"});
+    }
+
+    const sections = document.querySelectorAll(".section");
+
+    window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 150;
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        document.querySelectorAll(".sidebar a").forEach(link => {
+            link.classList.remove("active");
+        });
+
+        if(current){
+            const activeLink = document.getElementById("link-" + current);
+            if(activeLink){
+                activeLink.classList.add("active");
+            }
         }
     });
 
-    document.querySelectorAll(".sidebar a").forEach(link => {
-        link.classList.remove("active");
-    });
+    /* TEXTE ANIMÉ */
+    const text1 = "Bienvenue survivant. Respecte les règles. Sois fort. Fais-toi des amis… ou des ennemis.";
+    const text2 = "The Last Day est un tout nouveau serveur FiveM post-apocalyptique. Survivez, forgez des alliances et battez-vous pour votre survie.";
 
-    if(current){
-        const activeLink = document.getElementById("link-" + current);
-        if(activeLink){
-            activeLink.classList.add("active");
+    let i=0,j=0;
+
+    function type1(){
+        if(i<text1.length){
+            document.getElementById("intro-text").innerHTML += text1[i];
+            i++;
+            setTimeout(type1,30);
+        } else {
+            document.getElementById("intro-text").classList.add("float");
+            type2();
         }
     }
-});
+
+    function type2(){
+        if(j<text2.length){
+            document.getElementById("sub-text").innerHTML += text2[j];
+            j++;
+            setTimeout(type2,20);
+        } else {
+            document.getElementById("sub-text").classList.add("float");
+        }
+    }
+
+    type1();
+};
 </script>
 
 </body>
