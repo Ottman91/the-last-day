@@ -75,7 +75,7 @@ header {
 /* TEXTE PRINCIPAL */
 #intro-text {
     margin-top: 30px;
-    font-size: 22px; /* 🔥 plus gros */
+    font-size: 22px;
     text-shadow: 0 0 5px black;
     min-height: 60px;
 }
@@ -83,7 +83,7 @@ header {
 /* TEXTE SECONDAIRE */
 #sub-text {
     margin-top: 15px;
-    font-size: 17px; /* 🔥 un peu plus petit */
+    font-size: 17px;
     text-shadow: 0 0 5px black;
     min-height: 50px;
 }
@@ -104,12 +104,60 @@ header {
     padding: 20px;
 }
 
+/* 🔥 CARDS APOCALYPTIQUES */
 .card {
-    background: rgba(0,0,0,0.75);
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
+    background: rgba(10, 10, 10, 0.85);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+
+    border: 1px solid rgba(255, 80, 50, 0.3);
+
+    box-shadow:
+        0 0 10px rgba(255, 80, 50, 0.2),
+        inset 0 0 15px rgba(0,0,0,0.8);
+
     backdrop-filter: blur(6px);
+
+    position: relative;
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.01);
+    box-shadow:
+        0 0 20px rgba(255, 80, 50, 0.4),
+        inset 0 0 20px rgba(0,0,0,0.9);
+}
+
+/* Ligne stylée */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,80,50,0.8),
+        transparent
+    );
+}
+
+/* TITRES CARDS */
+.card h2 {
+    color: #ffb347;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 0 5px rgba(255,140,0,0.7),
+        0 0 10px rgba(255,80,0,0.5);
 }
 
 .hidden {
@@ -195,7 +243,7 @@ function showPage(page) {
 // texte principal
 const text1 = "Bienvenue survivant. Respecte les règles. Sois fort.\nFais-toi des amis… ou des ennemis.";
 
-// texte secondaire sur 2 lignes
+// texte secondaire
 const text2 = "The Last Day est un tout nouveau serveur FiveM post-apocalyptique avec de larges choix.\nSurvivez, forgez des alliances avec d'autres survivants, découvrez ce monde dévasté et battez-vous pour votre survie.";
 
 let i = 0;
@@ -223,7 +271,6 @@ function typeWriter2() {
     }
 }
 
-// démarrage direct
 typeWriter1();
 </script>
 
