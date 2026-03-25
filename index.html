@@ -26,17 +26,33 @@ body {
 nav {
     background: #0a0a0a;
     padding: 15px;
-    text-align: center;
 }
 
-nav a {
+/* NAV STRUCTURE */
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* LOGO */
+.logo {
+    position: absolute;
+    left: 20px;
+    height: 50px;
+    filter: drop-shadow(0 0 8px orange);
+}
+
+/* MENU */
+.menu a {
     margin: 0 20px;
     color: #e6c7a1;
     cursor: pointer;
     text-decoration: none;
 }
 
-nav a:hover {
+.menu a:hover {
     color: #ff4d4d;
 }
 
@@ -104,7 +120,7 @@ header {
     padding: 20px;
 }
 
-/* 🔥 CARDS APOCALYPTIQUES */
+/* CARDS APOCALYPTIQUES */
 .card {
     background: rgba(10, 10, 10, 0.85);
     padding: 25px;
@@ -169,10 +185,16 @@ header {
 <body>
 
 <nav>
-    <a onclick="showPage('home')">Accueil</a>
-    <a onclick="showPage('rules')">Règlement</a>
-    <a onclick="showPage('lore')">Lore</a>
-    <a onclick="showPage('team')">Équipe</a>
+    <div class="nav-container">
+        <img src="g.png" class="logo">
+
+        <div class="menu">
+            <a onclick="showPage('home')">Accueil</a>
+            <a onclick="showPage('rules')">Règlement</a>
+            <a onclick="showPage('lore')">Lore</a>
+            <a onclick="showPage('team')">Équipe</a>
+        </div>
+    </div>
 </nav>
 
 <header>
