@@ -38,41 +38,38 @@ nav a {
 }
 
 nav a:hover {
-    color: red;
+    color: #ff4d4d;
 }
 
 /* HEADER */
 header {
     text-align: center;
-    padding: 60px;
+    padding: 80px 20px;
 }
 
-/* TITRE APOCALYPSE */
+/* TITRE */
 .title {
     font-family: 'Creepster', cursive;
-    font-size: 70px;
+    font-size: 90px;
+}
 
-    background: linear-gradient(white, red);
+/* TEXTE AVEC LOGO INCRUSTÉ */
+.text {
+    background:
+        url("logo.png") center/contain no-repeat,
+        linear-gradient(white, #ff4d4d);
+
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
+    filter: contrast(1.2) brightness(1.1);
+
     text-shadow:
-        0 0 10px red,
-        0 0 20px darkred,
-        0 0 40px black;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
+        0 0 5px rgba(255,0,0,0.5),
+        0 0 15px rgba(255,0,0,0.3);
 }
 
-/* LOGO */
-.logo {
-    width: 100px;
-}
-
-/* TEXTE */
+/* TEXTE HEADER */
 header p {
     margin-top: 20px;
     text-shadow: 0 0 5px black;
@@ -84,7 +81,7 @@ header p {
 }
 
 .card {
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.75);
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -108,8 +105,7 @@ header p {
 
 <header>
     <h1 class="title">
-        THE LAST DAY
-        <img src="logo.png" class="logo">
+        <span class="text">THE LAST DAY</span>
     </h1>
 
     <p>
