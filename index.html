@@ -338,24 +338,57 @@ function type2(){
 }
 
 <script>
-window.onload = function(){
 
-    function showPage(page){
-        document.getElementById("home").classList.add("hidden");
-        document.getElementById("rules").classList.add("hidden");
-        document.getElementById("lore").classList.add("hidden");
-        document.getElementById("team").classList.add("hidden");
+/* NAVIGATION (IMPORTANT = GLOBAL) */
+function showPage(page){
+    document.getElementById("home").classList.add("hidden");
+    document.getElementById("rules").classList.add("hidden");
+    document.getElementById("lore").classList.add("hidden");
+    document.getElementById("team").classList.add("hidden");
 
-        document.getElementById(page).classList.remove("hidden");
+    document.getElementById(page).classList.remove("hidden");
+}
+
+function go(id){
+    document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+
+/* TEXTE ANIMÉ */
+const text1 = "Bienvenue survivant. Respecte les règles. Sois fort. Fais-toi des amis… ou des ennemis.";
+const text2 = "The Last Day est un tout nouveau serveur FiveM post-apocalyptique avec de larges choix. Survivez, forgez des alliances avec d'autres survivants, découvrez ce monde dévasté et battez-vous pour votre survie.";
+
+let i = 0;
+let j = 0;
+
+function type1(){
+    if(i < text1.length){
+        document.getElementById("intro-text").innerHTML += text1[i];
+        i++;
+        setTimeout(type1,30);
+    } else {
+        document.getElementById("intro-text").classList.add("float");
+        type2();
     }
+}
 
-    window.showPage = showPage;
-
-    window.go = function(id){
-        document.getElementById(id).scrollIntoView({behavior:"smooth"});
+function type2(){
+    if(j < text2.length){
+        document.getElementById("sub-text").innerHTML += text2[j];
+        j++;
+        setTimeout(type2,20);
+    } else {
+        document.getElementById("sub-text").classList.add("float");
     }
+}
+
+type1();
+
+/* ✅ SOMMAIRE  */
+setTimeout(() => {
 
     const sections = document.querySelectorAll(".section");
+
+    if(sections.length === 0) return; // évite bug
 
     window.addEventListener("scroll", () => {
         let current = "";
@@ -379,35 +412,8 @@ window.onload = function(){
         }
     });
 
-    /* TEXTE ANIMÉ */
-    const text1 = "Bienvenue survivant. Respecte les règles. Sois fort. Fais-toi des amis… ou des ennemis.";
-    const text2 = "The Last Day est un tout nouveau serveur FiveM post-apocalyptique. Survivez, forgez des alliances et battez-vous pour votre survie.";
+}, 500);
 
-    let i=0,j=0;
-
-    function type1(){
-        if(i<text1.length){
-            document.getElementById("intro-text").innerHTML += text1[i];
-            i++;
-            setTimeout(type1,30);
-        } else {
-            document.getElementById("intro-text").classList.add("float");
-            type2();
-        }
-    }
-
-    function type2(){
-        if(j<text2.length){
-            document.getElementById("sub-text").innerHTML += text2[j];
-            j++;
-            setTimeout(type2,20);
-        } else {
-            document.getElementById("sub-text").classList.add("float");
-        }
-    }
-
-    type1();
-};
 </script>
 
 </body>
