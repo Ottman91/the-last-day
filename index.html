@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <title>The Last Day</title>
 
-<!-- POLICE APOCALYPSE STYLE DAYZ -->
-<link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+<!-- POLICE SALE / APOCALYPSE -->
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
 
 <style>
 body {
@@ -47,36 +47,32 @@ header {
     padding: 80px 20px;
 }
 
-/* TITRE */
+/* TITRE STYLE DAYZ */
 .title {
-    font-family: 'Rubik Glitch', sans-serif;
-    font-size: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-}
+    font-family: 'Special Elite', cursive;
+    font-size: 90px;
+    letter-spacing: 5px;
 
-/* TEXTE */
-.text {
-    color: #f5f5f5;
+    color: #eaeaea;
 
     text-shadow:
-        0 0 5px rgba(255,0,0,0.5),
-        0 0 10px rgba(255,0,0,0.4),
-        0 0 20px black;
+        0 0 2px black,
+        0 0 5px rgba(255,255,255,0.2),
+        0 0 15px rgba(255,100,0,0.3);
+
+    position: relative;
 }
 
-/* LOGO VISIBLE */
-.logo {
-    width: 120px;
-    height: auto;
+/* EFFET USÉ / SALE */
+.title::before {
+    content: "THE LAST DAY";
+    position: absolute;
+    left: 0;
+    top: 0;
 
-    filter:
-        brightness(1.2)
-        contrast(1.2)
-        drop-shadow(0 0 10px orange)
-        drop-shadow(0 0 20px red);
+    color: rgba(255, 100, 0, 0.2);
+
+    transform: translate(2px, 2px);
 }
 
 /* TEXTE HEADER */
@@ -114,10 +110,7 @@ header p {
 </nav>
 
 <header>
-    <h1 class="title">
-        <span class="text">THE LAST DAY</span>
-        <img src="logo.png" class="logo">
-    </h1>
+    <h1 class="title">THE LAST DAY</h1>
 
     <p>
         Bienvenue survivant. Respecte les règles. Sois fort.<br>
@@ -125,7 +118,6 @@ header p {
     </p>
 </header>
 
-<!-- ACCUEIL -->
 <div id="home" class="container">
 
     <div class="card">
@@ -154,7 +146,6 @@ header p {
 
 </div>
 
-<!-- REGLEMENT -->
 <div id="rules" class="container hidden">
     <div class="card">
         <h2>Règlement</h2>
@@ -162,7 +153,6 @@ header p {
     </div>
 </div>
 
-<!-- LORE -->
 <div id="lore" class="container hidden">
     <div class="card">
         <h2>Lore</h2>
@@ -170,7 +160,6 @@ header p {
     </div>
 </div>
 
-<!-- EQUIPE -->
 <div id="team" class="container hidden">
     <div class="card">
         <h2>Équipe</h2>
