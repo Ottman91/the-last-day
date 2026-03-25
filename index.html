@@ -65,30 +65,33 @@ header {
     z-index: 2;
 }
 
-h1 {
+<h1 class="title">
+    THE LAST DAY
+    <img src="fond.png" class="logo">
+</h1>
+<link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
+
+.title {
+    font-family: 'Nosifer', cursive;
     font-size: 60px;
-    color: red;
-    text-shadow: 
+
+    background: linear-gradient(white, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
         0 0 10px red,
         0 0 20px darkred,
         0 0 40px black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
-/* SANG QUI COULE */
-.drip {
-    position: relative;
-    display: inline-block;
-}
-
-.drip::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 100%;
-    width: 4px;
-    height: 20px;
-    background: red;
-    animation: drip 2s infinite;
+.logo {
+    width: 80px;
 }
 
 @keyframes drip {
